@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/ImSurajx/manifest --depth 1 -b Pe-12L .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch aosp_lavender-user
 export KBUILD_BUILD_USER=ImSurajx 
