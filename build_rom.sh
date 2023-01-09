@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b r20 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/baconpeedit/Local_Manifest.git --depth 1 -b xtended .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,6 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xtended_ginkgo-userdebug
 export WITH_GAPPS=true
+export BUILD_USERNAME=Tejas
+export KBUILD_BUILD_NAME=Tejas
+export BUILD_HOSTNAME=prototype
 export TZ=Asia/Delhi #put before last build command 
 make xtended
 
