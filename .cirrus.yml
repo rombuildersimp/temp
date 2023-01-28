@@ -13,7 +13,7 @@ task:
       name: AX61-2
     isolation:
       container:
-        image: apon77/aosp:cirrus
+        image: jk8s/cirrus-ci-aosp:latest
         cpu: 2
         memory: 4G
 
