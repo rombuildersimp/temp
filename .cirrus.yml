@@ -4,19 +4,12 @@ env:
     bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
 
 task:
-  name: Test
-  skip: $CIRRUS_BRANCH == 'main'
-  # only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 2m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: jk8s/cirrus-ci-aosp:latest
-        cpu: 2
-        memory: 4G
-
+  name: aosp
+  timeout_in: 120m
+  container:
+    image: jk8s/cirrus-ci-aosp:latest
+    cpu: 8
+    memory: 32G
   env_script:
     - env
   show_script:
